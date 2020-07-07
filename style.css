@@ -1,0 +1,274 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.filters {
+    flex: 0 1 auto;
+    margin: 0 5px;
+}
+ff-record-list {
+    flex: 1 1 auto;
+    margin: 10px 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ff-record {
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1px solid #b9b9b9;
+    width: 240px;
+    margin: 0 10px 20px 10px;
+    user-select: none;
+}
+
+ff-record a {
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+ff-record .record-img {
+    box-sizing: border-box;
+    padding: 15px 15px 0 15px;
+    height: 223px;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ff-record .record-img img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+ff-record .record-product-info {
+    padding: 15px 15px 0 15px;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ff-record h3.record-product-name {
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.25rem;
+    height: 2.5rem;
+    margin-bottom: .5rem;
+    overflow: hidden;
+}
+
+ff-record .record-product-brand,
+ff-record .record-product-price {
+    height: 1.5rem;
+    overflow: hidden;
+}
+
+ff-record .record-product-add-to-cart {
+    margin-top: 1.2rem;
+    padding: 0 15px 15px 15px;
+}
+
+ff-record .record-product-add-to-cart button {
+    display: inline-block;
+    width: 100%;
+    padding: .375rem .75rem;
+    background-color: #004587;
+    border: 1px solid #004587;
+    line-height: 1.25rem;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+}
+
+ff-record .record-product-add-to-cart button:hover {
+    background-color: #003669;
+}
+
+ff-asn-group {
+    display: none;
+}
+
+ff-asn-group-slider {
+    border: 1px solid #b9b9b9;
+    margin: 10px auto 20px;
+    padding: 10px;
+    max-width: 280px;
+}
+ff-slider-one-touch {
+    margin: 40px 20px;
+}
+ff-slider-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.ff-slider-control-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px
+}
+.ff-slider-control-input,
+.ff-slider-control-input:focus {
+    width: 74px;
+    height: 31px;
+    border: 1px solid #ededed;
+    text-align: center;
+    outline: none;
+}
+[data-container="removeFilter"] {
+    cursor: pointer;
+}
+
+#fancy .ffw-triangle {
+    border-color: transparent transparent #4bbee9 transparent;
+    opacity: .17;
+}
+#fancy .ffw-slider-button {
+    width: 11px;
+    height: 11px;
+    border-width: 2px;
+    border-color: #4bbee9;
+    background-color: white;
+    z-index: 1003;
+    transition: width .2s ease-out, height .2s ease-out, left .2s ease-in-out;
+}
+#fancy .ffw-active ~ .ffw-slider-button {
+    width: 15px;
+    height: 15px;
+    transition: width .2s ease-in, height .2s ease-in;
+}
+#fancy .ffw-line {
+    background-color: #4bbee9;
+    height: 5px;
+}
+.tooltip {
+    float: right;
+    margin-top: -30px;
+    position: relative;
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+.tooltip-content {
+    font-weight: normal;
+    color: black;
+    opacity: 0;
+    visibility: hidden;
+    background-color: white;
+    border-radius: 5px;
+    border: #DEDEDE 1px solid;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    top: -5px;
+    left: 110%;
+    width: 330px;
+    z-index: 1;
+    transition: opacity 0.2s ease-in, visibility 0s linear 0.2s;
+    display: -ms-inline-grid;
+    display: inline-grid;
+    -ms-grid-columns: 1fr 2fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template: 1fr 1fr / 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+.tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-out;
+}
+.tooltip-content > div:nth-child(n + 3) {
+    -ms-grid-row: 2;
+}
+.tooltip-anim-container {
+    position: relative;
+    margin: 20px;
+}
+.tooltip-anim-container + div {
+    -ms-grid-column: 2;
+}
+.tooltip-triangle {
+    border-color: transparent transparent #4bbee9 transparent;
+    border-width: 0 0 40px 40px;
+    border-style: solid;
+    opacity: .5;
+    width: 0;
+}
+.tooltip-axis {
+    position: absolute;
+    background-color: black;
+    background-clip: padding-box;
+}
+.horizontal-axis {
+    top: 50%;
+    height: 1px;
+    width: 60px;
+}
+.vertical-axis {
+    left: 50%;
+    width: 1px;
+    height: 60px;
+}
+
+.anim-left-right {
+    animation: left-right 2.5s linear infinite;
+}
+@keyframes left-right {
+    from, to {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-20px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(20px);
+    }
+}
+
+.anim-up-down {
+    animation: up-down 2.5s linear infinite;
+}
+@keyframes up-down {
+    from, to {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateY(20px);
+    }
+}
+
+#custom-svg .ffw-triangle {
+    border-color: transparent;
+    background: url("triangle.svg");
+    background-size: 240px 120px;
+    opacity: .8;
+    /* 1px dimensions necessary for IE11 only */
+    width: 1px;
+    height: 1px;
+}

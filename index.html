@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ff-slider-one-touch Demo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <script src="node_modules/ff-web-components/dist/vendor/custom-elements-es5-adapter.js"></script>
+        <script src="node_modules/ff-web-components/dist/vendor/webcomponents-loader.js"></script>
+        <script src="node_modules/ff-web-components/dist/bundle.js" defer></script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ff-communication
+                url="https://showcase-phoenix.ff-labs.de/fact-finder"
+                version="ng"
+                channel="Bergfreunde-en"
+                currency-code="EUR"
+                currency-country-code="de-DE"
+                default-query="boots"
+                search-immediate
+                disable-single-hit-redirect="true"
+        ></ff-communication>
+        <main>
+            <div class="filters">
+                <ff-asn>
+                    <ff-asn-group-slider id="default" for-group="Price" opened>
+                        <div slot="groupCaption">
+                            <b>Default</b>
+                        </div>
+
+                        <ff-slider-control submit-on-input="true">
+                            <div class="ff-slider-control-wrapper">
+                                <input data-control='1' class="ff-slider-control-input">
+                                <input data-test="{{group.name}}" data-control='2' class="ff-slider-control-input">
+                            </div>
+                            <ff-slider-one-touch></ff-slider-one-touch>
+                        </ff-slider-control>
+                    </ff-asn-group-slider>
+                </ff-asn>
+
+                <ff-asn>
+                    <ff-asn-group-slider id="fancy" for-group="Price" opened>
+                        <div slot="groupCaption">
+                            <b>Fancy</b>
+                        </div>
+
+                        <ff-slider-control submit-on-input="true">
+                            <div class="tooltip">
+                                i
+                                <div class="tooltip-content">
+                                    <div class="tooltip-anim-container">
+                                        <div class="tooltip-axis horizontal-axis"></div>
+                                        <div class="tooltip-triangle anim-left-right"></div>
+                                    </div>
+                                    <div>Drag triangle left and right to adjust max price</div>
+                                    <div class="tooltip-anim-container">
+                                        <div class="tooltip-axis vertical-axis"></div>
+                                        <div class="tooltip-triangle anim-up-down"></div>
+                                    </div>
+                                    <div>Drag triangle up and down to adjust min price</div>
+                                </div>
+                            </div>
+                            <div class="ff-slider-control-wrapper">
+                                <input data-control='1' class="ff-slider-control-input">
+                                <input data-test="{{group.name}}" data-control='2' class="ff-slider-control-input">
+                            </div>
+                            <ff-slider-one-touch ratio="1"></ff-slider-one-touch>
+                        </ff-slider-control>
+                    </ff-asn-group-slider>
+                </ff-asn>
+
+                <ff-asn>
+                    <ff-asn-group-slider id="custom-svg" for-group="Price" opened>
+                        <div slot="groupCaption">
+                            <b>Custom SVG</b>
+                        </div>
+
+                        <ff-slider-control submit-on-input="true">
+                            <div class="ff-slider-control-wrapper">
+                                <input data-control='1' class="ff-slider-control-input">
+                                <input data-test="{{group.name}}" data-control='2' class="ff-slider-control-input">
+                            </div>
+                            <ff-slider-one-touch></ff-slider-one-touch>
+                        </ff-slider-control>
+                    </ff-asn-group-slider>
+                </ff-asn>
+            </div>
+            <ff-record-list unresolved>
+                <ff-record>
+                    <a data-anchor="https://www.alpinetrek.co.uk{{record.Deeplink}}"
+                       data-redirect="https://www.alpinetrek.co.uk{{record.Deeplink}}" data-redirect-target="_blank">
+                        <div class="record-img">
+                            <img data-image="https://showcase-phoenix.ff-labs.de/demoshop-images/{{record.ImageName}}">
+                        </div>
+                        <div class="record-product-info">
+                            <h3 class="record-product-name">
+                                {{record.Title}}
+                            </h3>
+                            <div class="record-product-brand">{{record.Manufacturer}}</div>
+                            <div class="record-product-price">{{record.Price}}</div>
+                        </div>
+                    </a>
+                    <div class="record-product-add-to-cart">
+                        <button>Add to Cart</button>
+                    </div>
+                </ff-record>
+            </ff-record-list>
+        </main>
+    </body>
+</html>
