@@ -1,3 +1,7 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 main {
     display: flex;
     justify-content: space-between;
@@ -163,6 +167,7 @@ ff-slider-control {
     width: 18px;
     text-align: center;
     font-weight: bold;
+    font-size: 14px;
 }
 .tooltip-content {
     font-weight: normal;
