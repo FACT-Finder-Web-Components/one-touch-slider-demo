@@ -12,14 +12,16 @@
     </head>
     <body>
         <ff-communication
-                url="https://showcase-phoenix.ff-labs.de/fact-finder"
+                url="https://ng-search-web-components.fact-finder.de/fact-finder"
                 version="ng"
-                channel="Bergfreunde-en"
+                api="v4"
+                channel="demo-bergfreunde-en"
+
                 currency-code="EUR"
                 currency-country-code="de-DE"
+
                 default-query="boots"
                 search-immediate
-                disable-single-hit-redirect="true"
         ></ff-communication>
         <main>
             <div class="filters">
@@ -91,7 +93,7 @@
                     <a data-anchor="https://www.alpinetrek.co.uk{{record.Deeplink}}"
                        data-redirect="https://www.alpinetrek.co.uk{{record.Deeplink}}" data-redirect-target="_blank">
                         <div class="record-img">
-                            <img data-image="https://showcase-phoenix.ff-labs.de/demoshop-images/{{record.ImageName}}">
+                            <img data-image="https://showcase.ff-labs.de/demoshop-images/{{record.ImageName}}">
                         </div>
                         <div class="record-product-info">
                             <h3 class="record-product-name">
