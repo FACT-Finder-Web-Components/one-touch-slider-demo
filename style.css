@@ -155,7 +155,10 @@ ff-slider-control {
 }
 #fancy .ffw-line {
     background-color: #4bbee9;
-    height: 5px;
+    height: 4px;
+}
+#fancy .ffw-selected-range {
+    height: 4px;
 }
 .tooltip {
     float: right;
